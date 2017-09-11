@@ -1,4 +1,4 @@
-package org.java.practice.springinaction.knights;
+package org.java.practice.spring.knights;
 
 
 import java.io.PrintStream;

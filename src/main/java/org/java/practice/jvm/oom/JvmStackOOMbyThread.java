@@ -1,10 +1,10 @@
-package org.java.practice.oom;
+package org.java.practice.jvm.oom;
 
 /**
  * 通过创建线程让虚拟机栈OOM
  * Created by yang.jin on 10/09/2017.
  */
-public class JVMStackOOMbyThread {
+public class JvmStackOOMbyThread {
     private void dontStop() {
         while (true) {
         }
@@ -28,7 +28,7 @@ public class JVMStackOOMbyThread {
      * @throws Throwable
      */
     public static void main(String[] args) throws Throwable {
-        JVMStackOOMbyThread oom = new JVMStackOOMbyThread();
+        JvmStackOOMbyThread oom = new JvmStackOOMbyThread();
         oom.stackLeakByThread();
     }
 

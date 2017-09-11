@@ -1,10 +1,10 @@
-package org.java.practice.oom;
+package org.java.practice.jvm.oom;
 
 /**
  * 虚拟机栈StackOverFlow
  * Created by yang.jin on 10/09/2017.
  */
-public class JVMStackSOF {
+public class JvmStackSOF {
 
     private int stackLength=1;
 
@@ -14,7 +14,7 @@ public class JVMStackSOF {
     }
 
     public static void main(String[]args)throws Throwable{
-        JVMStackSOF oom=new JVMStackSOF();
+        JvmStackSOF oom=new JvmStackSOF();
         try{
             oom.stackLeak();
         }catch(Throwable e){
