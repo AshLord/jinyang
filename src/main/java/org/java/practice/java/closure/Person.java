@@ -1,4 +1,4 @@
-package org.java.practice.jdk.closure;
+package org.java.practice.java.closure;
 
 /**
  * Created by yang.jin on 11/09/2017.
