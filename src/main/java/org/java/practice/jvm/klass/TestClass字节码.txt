@@ -1,0 +1,53 @@
+Classfile /E:/practice/src/main/java/org/java/practice/jvm/klass/TestClass.class
+  Last modified 28-Sep-2017; size 303 bytes
+  MD5 checksum 82de17c68def8c4eaf6f308898410bd1
+  Compiled from "TestClass.java" Class              #18            // java/lang/Object
+   #5 =
+public class org.java.practice.jvm.klass.TestClass
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #4.#15         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #3.#16         // org/java/practice/jvm/klass/TestClass.m:I
+   #3 = Class              #17            // org/java/practice/jvm/klass/TestClass
+   #4 = Utf8               m
+   #6 = Utf8               I
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               inc
+  #12 = Utf8               ()I
+  #13 = Utf8               SourceFile
+  #14 = Utf8               TestClass.java
+  #15 = NameAndType        #7:#8          // "<init>":()V
+  #16 = NameAndType        #5:#6          // m:I
+  #17 = Utf8               org/java/practice/jvm/klass/TestClass
+  #18 = Utf8               java/lang/Object
+{
+  public org.java.practice.jvm.klass.TestClass();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+
+  public int inc();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #2                  // Field m:I
+         4: iconst_1
+         5: iadd
+         6: ireturn
+      LineNumberTable:
+        line 11: 0
+}
+SourceFile: "TestClass.java"
