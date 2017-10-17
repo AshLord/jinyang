@@ -3,7 +3,7 @@ package org.java.practice.java;
 /**
  * Created by 晋阳 on 2017/9/24.
  */
-public class SonOfAbstractClass extends AccessFlag{
+public class SonOfAbstractClass extends MethodAccessFlag {
 
     @Override
     void fun7() {

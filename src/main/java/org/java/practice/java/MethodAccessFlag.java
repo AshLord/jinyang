@@ -3,7 +3,7 @@ package org.java.practice.java;
 /**
  * Created by 晋阳 on 2017/9/24.
  */
-public abstract class AccessFlag {
+public abstract class MethodAccessFlag {
 
     public void func0() {
         //共有方法 表明该数据成员、成员函数是对所有用户开放的，所有用户都可以直接进行调用
