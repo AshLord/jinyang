@@ -9,4 +9,6 @@ public interface Subject {
 
     public void doSomething();
 
+    public void doNextThing();
+
 }

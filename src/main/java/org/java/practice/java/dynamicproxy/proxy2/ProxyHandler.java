@@ -28,10 +28,10 @@ public class ProxyHandler implements InvocationHandler{
         Object result = null;
         //这里就可以进行所谓的AOP编程了
         //在调用具体函数方法前，执行功能处理
-        System.out.println("before doSomething()");
+        System.out.println("before "+method.getName());
         result = method.invoke(tar,args);
         //在调用具体函数方法后，执行功能处理
-        System.out.println("after doSomething()");
+        System.out.println("after "+method.getName());
         return result;
     }
 }

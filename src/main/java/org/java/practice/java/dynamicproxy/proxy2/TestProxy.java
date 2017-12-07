@@ -13,6 +13,7 @@ public class TestProxy {
         //绑定该类实现的所有接口
         Subject sub = (Subject) proxy.bind(new RealSubject());
         sub.doSomething();
+        sub.doNextThing();
     }
 
 }
