@@ -21,8 +21,8 @@ public class Tree {
         TreeNode nodeB = new TreeNode("B");
         TreeNode nodeC = new TreeNode("C");
 
-        nodeB.add(nodeC);
         tree.root.add(nodeB);
+        nodeB.add(nodeC);
         System.out.println("build the tree finished!");
     }
 

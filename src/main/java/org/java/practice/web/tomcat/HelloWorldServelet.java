@@ -21,6 +21,10 @@ public class HelloWorldServelet extends HttpServlet {
 
     }
 
+    private void privateFunc() {
+        System.out.println("private");
+    }
+
     public static void main(String[] args) {
         HelloWorldServelet helloWorldServelet = new HelloWorldServelet();
     }

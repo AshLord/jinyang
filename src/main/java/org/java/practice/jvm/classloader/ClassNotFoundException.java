@@ -3,7 +3,7 @@ package org.java.practice.jvm.classloader;
 /**
  * Created by yang.jin on 07/11/2017.
  */
-public class ClassNotFoundException {
+public class ClassNotFoundException extends Throwable {
 
     public static void main(String[] args) {
         try {
