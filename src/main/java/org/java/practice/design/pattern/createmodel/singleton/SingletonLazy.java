@@ -1,4 +1,4 @@
-package org.java.practice.design.singleton;
+package org.java.practice.design.pattern.createmodel.singleton;
 
 /**
  * Desc: 单例模式-懒加载

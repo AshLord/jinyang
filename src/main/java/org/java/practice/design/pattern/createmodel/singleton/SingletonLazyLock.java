@@ -1,4 +1,4 @@
-package org.java.practice.design.singleton;
+package org.java.practice.design.pattern.createmodel.singleton;
 
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
