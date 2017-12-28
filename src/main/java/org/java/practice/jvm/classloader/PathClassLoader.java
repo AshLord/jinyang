@@ -17,7 +17,7 @@ public class PathClassLoader extends ClassLoader{
         this.classPath = classPath;
     }
 
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    /*protected Class<?> findClass(String name)  {
         if (packageName.startsWith(name)) {
             byte[] classData = getData(name);
             if (classData == null) {
@@ -28,7 +28,7 @@ public class PathClassLoader extends ClassLoader{
         } else {
             return super.loadClass(name);
         }
-    }
+    }*/
 
     private byte[] getData(String name) {
         String path = classPath + File.separatorChar + className.replace('.', File.separatorChar) + ".class";

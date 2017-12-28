@@ -5,6 +5,12 @@ package org.java.practice.java.reflect;
  */
 public class MyTest {
 
+    private String val1;
+
+    private String val2;
+
+    private String val3;
+
     public void setMyTest(){
         System.out.println("setMyTest");
     }

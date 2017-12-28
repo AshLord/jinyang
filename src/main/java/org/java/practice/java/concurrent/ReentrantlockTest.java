@@ -23,6 +23,8 @@ public class ReentrantlockTest {
                 } finally {
                     lock.unlock();//释放锁
                 }
+            } else {
+                //获取不了锁就去做其他事情
             }
         } catch (InterruptedException e) {
             e.printStackTrace(); //当前线程被中断时(interrupt)，会抛InterruptedException

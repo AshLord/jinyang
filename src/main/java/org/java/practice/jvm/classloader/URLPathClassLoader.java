@@ -14,7 +14,7 @@ public class URLPathClassLoader extends URLClassLoader{
         super(urls, parent);
     }
 
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    /*protected Class<?> findClass(String name) {
         Class<?> aClass = findLoadedClass(name);
         if (aClass != null) {
             return aClass;
@@ -24,7 +24,7 @@ public class URLPathClassLoader extends URLClassLoader{
         } else {
             return super.findClass(name);
         }
-    }
+    }*/
 
 
 }

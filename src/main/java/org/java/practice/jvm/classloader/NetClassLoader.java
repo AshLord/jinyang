@@ -17,7 +17,7 @@ public class NetClassLoader extends ClassLoader {
         this.classPath = classPath;
     }
 
-    protected Class<?> findClass(String name) throws ClassNotFoundException {
+    /*protected Class<?> findClass(String name) {
         Class<?> aClass = findLoadedClass(name);
         if (aClass != null) {
             return aClass;
@@ -49,7 +49,7 @@ public class NetClassLoader extends ClassLoader {
         } else {
             return super.loadClass(name);
         }
-    }
+    }*/
 
     private byte[] decode(byte[] src) {
         return src;

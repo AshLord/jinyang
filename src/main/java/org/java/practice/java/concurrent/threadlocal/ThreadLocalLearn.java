@@ -7,6 +7,7 @@ public class ThreadLocalLearn {
 
     // 通过匿名内部类覆盖ThreadLocal的initialValue()方法，指定初始值
     private static ThreadLocal seqNum = new ThreadLocal() {
+        @Override
         public Integer initialValue() {
             return 0;
         }
