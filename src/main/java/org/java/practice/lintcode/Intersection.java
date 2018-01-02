@@ -62,15 +62,18 @@ public class Intersection {
             case 8:
                 //仿照6，使用list，尝试不删除合法重复元素，但是连不合法重复元素也给保留了
                 useList(nums1, nums2);
+                break;
             case 9:
                 //最慢最笨的方法实现取无重复交集
                 slowestWay(nums1, nums2);
+                break;
             case 10:
                 /** 终 极 完 美 答 案 */
                 //取包含重复元素并集
                 sortAndHashSet(nums1, nums2);
                 //取无重复元素并集
                 sortAndLinkedList(nums1, nums2);
+                break;
             default:
                 return;
         }
