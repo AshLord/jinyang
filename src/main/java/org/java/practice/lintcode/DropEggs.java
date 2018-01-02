@@ -15,6 +15,27 @@ public class DropEggs {
         //分析得出一元二次方程，解方程即可
         System.out.println(equation(2147483647));
 
+        //网上这帮人也太厉害了吧，畜生吧
+        System.out.println(dropEggsStandard(100));
+    }
+
+    /**
+     * 思路：
+     * 代码不长但比较难理解的题，优化最坏情况，用第一个鸡蛋判断区间，第二个鸡蛋判断层数，每增加一层区间，该区间的层数就减一，可记住做法
+     * @param n
+     * @return
+     */
+    public static int dropEggsStandard(int n) {
+        //该区间的层数
+        long ans = 0;
+        //区间数
+        int count = 0;
+        while (ans < n) {
+            count++;
+            ans = ans + count;
+        }
+
+        return count;
     }
 
     public static int equation(int n) throws Exception {
