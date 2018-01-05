@@ -1,8 +1,7 @@
 package org.java.practice.lintcode;
 
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author yang.jin
@@ -16,44 +15,57 @@ Given m = 2, n = 36 return 8
 public class DropEggsII {
 
     public static void main(String[] args) {
-        System.out.println(dropEggs2(2, 100));
-        System.out.println(anotherThought(2,100));
+        switch (0) {
+            case 0:
+                System.out.println(dropEggs2Standard(2, 100));
+                break;
+            case 1:
+                System.out.println(anotherThought(2,100));
+                break;
+            case 2:
+                //自己的土办法，循环+递归+备忘录，81% 数据通过测试，AC不了
+                System.out.println(dropEggs2(2,100));
+                break;
+            default:
+                break;
+        }
     }
 
     /**
-     * @param eggs
-     * @param totalFloor
+     * @param m 鸡蛋
+     * @param n 层数
      * @return
      */
-    public static int dropEgg(int eggs, int totalFloor) {
-        List<Integer> list = new LinkedList<>();
-        int currFloor = totalFloor;
-        for (int i = 1;i<totalFloor;i++) {
-            //第一种情况：碎了
-            int broke;
-            if (currFloor - 1 == 0) {
-                broke = 1;
-            } else {
-                broke = dropEgg(eggs - 1, currFloor - 1);
+    public static Map<String,Integer> map = new HashMap<>();
+    public static int dropEggs2(int m, int n) {
+        if (map.containsKey(m + "&" + n)) {
+            return map.get(m + "&" + n);
+        } else {
+            if(m == 1)
+                return n;
+            if(n == 1 || n == 0)
+                return n;
+            int result = Integer.MAX_VALUE;
+            for (int currFloor = 1;currFloor<n;currFloor++) {
+                //第一种情况：碎了
+                int broke;
+                if (currFloor - 1 == 0) {
+                    broke = 1;
+                } else {
+                    broke = dropEggs2(m - 1, currFloor - 1);
+                }
+                //第二种情况：没碎
+                int whole;
+                if (n - currFloor == 0) {
+                    whole = 1;
+                } else {
+                    whole = dropEggs2(m, n - currFloor);
+                }
+                result = Math.min(Math.max(broke, whole) + 1, result);
             }
-            //第二种情况：没碎
-            int whole;
-            if (totalFloor - currFloor == 0) {
-                whole = 1;
-            } else {
-                whole = dropEgg(eggs, totalFloor - currFloor);
-            }
-            currFloor--;
-            list.add(Math.max(broke, whole));
+            map.put(m + "&" + n, result);
+            return result;
         }
-        list.sort(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 - o2;
-            }
-        });
-        System.out.println(list.get(0));
-        return list.get(0);
     }
 
     /**
@@ -65,7 +77,7 @@ public class DropEggsII {
      * @param floors n层楼
      * @return
      */
-    public static int dropEggs2(int eggs, int floors) {
+    public static int dropEggs2Standard(int eggs, int floors) {
         // write your code here
         int[][] dp = new int[eggs + 1][floors + 1];
 
