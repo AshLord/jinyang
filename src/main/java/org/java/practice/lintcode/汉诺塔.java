@@ -5,12 +5,12 @@ import java.util.Stack;
 /**
  * Created by 晋阳 on 2018/1/1.
  */
-public class Tower {
+public class 汉诺塔 {
 
     public static void main(String[] args) {
         int n = 5;
-        Tower[] towers = new Tower[3];
-        for (int i = 0; i < 3; i++) towers[i] = new Tower(i);
+        汉诺塔[] towers = new 汉诺塔[3];
+        for (int i = 0; i < 3; i++) towers[i] = new 汉诺塔(i);
         for (int i = n - 1; i >= 0; i--) towers[0].add(i);
         towers[0].moveDisks(n, towers[2], towers[1]);
         //print towers[0], towers[1], towers[2]
@@ -20,7 +20,7 @@ public class Tower {
     /*
     * @param i: An integer from 0 to 2
     */
-    public Tower(int i) {
+    public 汉诺塔(int i) {
         // create three towers
         // write your code here
         disks = new Stack<Integer>();
@@ -43,7 +43,7 @@ public class Tower {
      * @param t: a tower
      * @return: nothing
      */
-    public void moveTopTo(Tower t) {
+    public void moveTopTo(汉诺塔 t) {
         // Move the top disk of this tower to the top of t.
         // Write your code here
         if (t.disks.isEmpty() || (!disks.isEmpty() && t.disks.peek() >= disks.peek())) {
@@ -57,7 +57,7 @@ public class Tower {
      * @param buffer: a tower
      * @return: nothing
      */
-    public void moveDisks(int n, Tower destination, Tower buffer) {
+    public void moveDisks(int n, 汉诺塔 destination, 汉诺塔 buffer) {
         // Move n Disks from this tower to destination by buffer tower
         // Write your code here
         if (n <= 0) {

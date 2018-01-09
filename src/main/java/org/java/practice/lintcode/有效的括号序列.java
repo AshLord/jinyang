@@ -8,7 +8,7 @@ import java.util.List;
  * Created by 晋阳 on 2017/12/31.
  * 有效的括号序列
  */
-public class ValidParentheses {
+public class 有效的括号序列 {
 
     public static void main(String[] args) {
         String s = "()[]{}";

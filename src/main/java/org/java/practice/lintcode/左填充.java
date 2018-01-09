@@ -4,7 +4,7 @@ package org.java.practice.lintcode;
  * Created by 晋阳 on 2017/12/31.
  * 左填充
  */
-public class LeftPad {
+public class 左填充 {
 
     public static void main(String[] args) {
 

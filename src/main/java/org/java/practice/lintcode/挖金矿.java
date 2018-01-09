@@ -7,7 +7,7 @@ import java.util.*;
  * date: 02/01/2018
  * desc:    手把手学习动态规划
  */
-public class DiggingGold {
+public class 挖金矿 {
 
     public static void main(String[] args) {
 

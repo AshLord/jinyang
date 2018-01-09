@@ -12,7 +12,7 @@ Example
 Given m = 2, n = 100 return 14
 Given m = 2, n = 36 return 8
  */
-public class DropEggsII {
+public class 扔鸡蛋II {
 
     public static void main(String[] args) {
         switch (3) {

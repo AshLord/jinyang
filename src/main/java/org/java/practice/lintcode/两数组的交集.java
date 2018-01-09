@@ -6,7 +6,7 @@ import java.util.*;
  * Created by 晋阳 on 2017/12/30.
  * 取两个数组的并集
  */
-public class Intersection {
+public class 两数组的交集 {
 
     public static void main(String[] args) {
         int[] nums1 = {61,24,20,58,95,53,17,32,45,85,70,20,83,62,35,89,5,95,12,86,58,77,30,64,46,13,5,92,

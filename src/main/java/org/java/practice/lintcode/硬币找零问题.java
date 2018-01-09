@@ -5,7 +5,7 @@ package org.java.practice.lintcode;
  * date: 02/01/2018
  * desc:
  */
-public class CoinsChange {
+public class 硬币找零问题 {
 
     public static void main(String[] args) {
         makeChange(new int[]{1,5,10},3,20,new int[]{20,4,2});

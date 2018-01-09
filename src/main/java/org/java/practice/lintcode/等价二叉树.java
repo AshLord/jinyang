@@ -4,7 +4,7 @@ package org.java.practice.lintcode;
  * Created by 晋阳 on 2017/12/31.
  * 判断二叉树是否相等
  */
-public class IdentifyBinaryTree {
+public class 等价二叉树 {
 
     public static void main(String[] args) {
         TreeNode rootA = new TreeNode(1);

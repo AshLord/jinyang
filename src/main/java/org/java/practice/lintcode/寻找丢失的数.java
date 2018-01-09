@@ -10,7 +10,7 @@ import java.util.List;
  给出 n = 20, str = 19201234567891011121314151618
  丢失的数是 17 ，返回这个数。
  */
-public class FindLostNumber {
+public class 寻找丢失的数 {
 
     public static void main(String[] args) {
         int n = 20;

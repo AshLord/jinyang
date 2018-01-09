@@ -2,12 +2,12 @@ package org.java.practice.lintcode;
 
 import java.util.Arrays;
 
-import static org.java.practice.lintcode.Intersection.printArray;
+import static org.java.practice.lintcode.两数组的交集.printArray;
 
 /**
  * Created by 晋阳 on 2018/1/6.
  */
-public class WiggleSort {
+public class 摆动排序 {
 
     public static void main(String[] args) {
         int[] nums = {3, 5, 2, 1, 6, 4, 4, 2};

@@ -5,7 +5,7 @@ package org.java.practice.lintcode;
  * date: 03/01/2018
  * desc:
  */
-public class DropEggIII {
+public class 扔鸡蛋II补充 {
 
     /**
      * @Title: main

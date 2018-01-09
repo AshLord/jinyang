@@ -10,7 +10,7 @@ import java.util.HashSet;
  * 例如，给定 s = "" , k = 3,
  * T 是 "eceb"，长度为 4.
  */
-public class LongestSubstringDistinct {
+public class 最多有k个不同字符的最长子字符串 {
 
     public static void main(String[] args) {
         String s = "ecebac";

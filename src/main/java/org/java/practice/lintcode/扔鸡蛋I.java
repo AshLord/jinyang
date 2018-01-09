@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by 晋阳 on 2017/12/31.
  */
-public class DropEggs {
+public class 扔鸡蛋I {
 
     public static void main(String[] args) throws Exception {
 
