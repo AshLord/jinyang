@@ -16,14 +16,22 @@ public class 最小生成树 {
         List<Connection> connections = new ArrayList<>();
         connections.add(new Connection("Acity", "Bcity", 1));
         connections.add(new Connection("Acity", "Ccity", 2));
-        connections.add(new Connection("Bcity", "Ccity", 3));
+        connections.add(new Connection("Bcity", "Ccity", 2));
 
-        switch (0) {
+        List<Connection> connections1 = new ArrayList<>();
+        connections.add(new Connection("Acity", "Bcity", 1));
+        connections.add(new Connection("Bcity", "Acity", 2));
+        connections.add(new Connection("Dcity", "Ccity", 1));
+        connections.add(new Connection("Ccity", "Dcity", 2));
+
+        switch (1) {
             case 0:
                 //思路1：先转化成图的数据结构，每个节点都去深度优先遍历，先获取完整链路，再筛选最小消耗路径
-                lowestCost(connections);
+                lowestCostAttempt(connections);
                 break;
             case 1:
+                //思路2：Kruskal算法
+                lowestCost(connections);
                 break;
             default:
                 break;
@@ -32,10 +40,79 @@ public class 最小生成树 {
     }
 
     /**
+     * Kruskal算法
+     */
+    public static List<Connection> lowestCost(List<Connection> connections) {
+        // Write your code here
+        connections.sort(new Comparator<Connection>() {
+            @Override
+            public int compare(Connection o1, Connection o2) {
+                if (o1.cost != o2.cost) {
+                    return o1.cost - o2.cost;
+                } else {
+                    if (o1.city1.equals(o2.city1)) {
+                        return o1.city2.hashCode() - o2.city2.hashCode();
+                    } else {
+                        return o1.city1.hashCode() - o2.city1.hashCode();
+                    }
+                }
+            }
+        });
+
+        Set<String> points = new HashSet<>();
+        for (Connection connection : connections) {
+            points.add(connection.city1);
+            points.add(connection.city2);
+        }
+
+        List<Connection> result = new ArrayList<>();
+        List<Set<String>> pointSets = new ArrayList<>();
+        for (String point : points) {
+            Set<String> set = new HashSet<>();
+            set.add(point);
+            pointSets.add(set);
+        }
+
+        for (Connection connection : connections) {
+            String start = connection.city1;
+            String end = connection.city2;
+            int startIndex = -1;
+            int endIndex = -1;
+
+            int i = 0;
+            for (Set<String> point : pointSets) {
+                if (point.contains(start)) {
+                    startIndex = i;
+                }
+                if (point.contains(end)) {
+                    endIndex = i;
+                }
+                i++;
+            }
+
+            if (startIndex < 0 || endIndex < 0) {
+                return null;
+            }
+
+            if (startIndex != endIndex) {
+                Set<String> startSet = pointSets.get(startIndex);
+                pointSets.remove(startIndex);
+                Set<String> endSet = pointSets.get(endIndex);
+                pointSets.remove(endIndex);
+                startSet.addAll(endSet);
+                pointSets.add(startSet);
+                result.add(connection);
+            }
+
+        }
+
+        return result;
+    }
+    /**
      * 思路1：每个节点都去深度优先遍历，先获取完整链路，再筛选最小消耗路径
      * 我他妈自己都快编不下去了，这题也太他妈难了吧
      */
-    public static List<Connection> lowestCost(List<Connection> connections) {
+    public static List<Connection> lowestCostAttempt(List<Connection> connections) {
         // Write your code here
         // 第一步 获取所有节点，转化成图的数据结构
         HashMap<String,List<Connection>> citiesMap = new HashMap<>();
