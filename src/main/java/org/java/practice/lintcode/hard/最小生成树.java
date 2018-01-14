@@ -16,13 +16,25 @@ public class 最小生成树 {
         List<Connection> connections = new ArrayList<>();
         connections.add(new Connection("Acity", "Bcity", 1));
         connections.add(new Connection("Acity", "Ccity", 2));
-        connections.add(new Connection("Bcity", "Ccity", 2));
+        connections.add(new Connection("Bcity", "Ccity", 3));
 
         List<Connection> connections1 = new ArrayList<>();
-        connections.add(new Connection("Acity", "Bcity", 1));
-        connections.add(new Connection("Bcity", "Acity", 2));
-        connections.add(new Connection("Dcity", "Ccity", 1));
-        connections.add(new Connection("Ccity", "Dcity", 2));
+        connections1.add(new Connection("Acity", "Bcity", 1));
+        connections1.add(new Connection("Bcity", "Acity", 2));
+        connections1.add(new Connection("Dcity", "Ccity", 1));
+        connections1.add(new Connection("Ccity", "Dcity", 2));
+
+        List<Connection> connections2 = new ArrayList<>();
+        connections2.add(new Connection("A", "B", 6));
+        connections2.add(new Connection("B", "C", 4));
+        connections2.add(new Connection("C", "D", 5));
+        connections2.add(new Connection("D", "E", 8));
+        connections2.add(new Connection("E", "F", 1));
+        connections2.add(new Connection("B", "F", 10));
+        connections2.add(new Connection("E", "C", 9));
+        connections2.add(new Connection("F", "C", 7));
+        connections2.add(new Connection("B", "E", 3));
+        connections2.add(new Connection("A", "F", 1));
 
         switch (1) {
             case 0:
@@ -51,9 +63,9 @@ public class 最小生成树 {
                     return o1.cost - o2.cost;
                 } else {
                     if (o1.city1.equals(o2.city1)) {
-                        return o1.city2.hashCode() - o2.city2.hashCode();
+                        return o1.city2.compareTo(o2.city2);
                     } else {
-                        return o1.city1.hashCode() - o2.city1.hashCode();
+                        return o1.city1.compareTo(o2.city1);
                     }
                 }
             }
@@ -91,10 +103,12 @@ public class 最小生成树 {
             }
 
             if (startIndex < 0 || endIndex < 0) {
-                return null;
+                return new ArrayList<>();
             }
 
-            if (startIndex != endIndex) {
+            // 比较startIndex和endIndex大小的原因：如果先删除HasHMap较小index的元素，再删除较大Index元素时，会造成数组越界
+            // 所以hashSet执行多个remove操作的时候，一定要从后往前删
+            if (startIndex > endIndex) {
                 Set<String> startSet = pointSets.get(startIndex);
                 pointSets.remove(startIndex);
                 Set<String> endSet = pointSets.get(endIndex);
@@ -102,8 +116,20 @@ public class 最小生成树 {
                 startSet.addAll(endSet);
                 pointSets.add(startSet);
                 result.add(connection);
+            } else if (startIndex < endIndex) {
+                Set<String> endSet = pointSets.get(endIndex);
+                pointSets.remove(endIndex);
+                Set<String> startSet = pointSets.get(startIndex);
+                pointSets.remove(startIndex);
+                startSet.addAll(endSet);
+                pointSets.add(startSet);
+                result.add(connection);
             }
 
+        }
+
+        if (pointSets.size() > 1) {
+            return new ArrayList<>();
         }
 
         return result;
