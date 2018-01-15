@@ -56,20 +56,17 @@ public class 最小生成树 {
      */
     public static List<Connection> lowestCost(List<Connection> connections) {
         // Write your code here
-        connections.sort(new Comparator<Connection>() {
-            @Override
-            public int compare(Connection o1, Connection o2) {
-                if (o1.cost != o2.cost) {
-                    return o1.cost - o2.cost;
+        connections.sort(((o1, o2) -> {
+            if (o1.cost != o2.cost) {
+                return o1.cost - o2.cost;
+            } else {
+                if (o1.city1.equals(o2.city1)) {
+                    return o1.city2.compareTo(o2.city2);
                 } else {
-                    if (o1.city1.equals(o2.city1)) {
-                        return o1.city2.compareTo(o2.city2);
-                    } else {
-                        return o1.city1.compareTo(o2.city1);
-                    }
+                    return o1.city1.compareTo(o2.city1);
                 }
             }
-        });
+        }));
 
         Set<String> points = new HashSet<>();
         for (Connection connection : connections) {
