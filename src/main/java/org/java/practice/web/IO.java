@@ -1,7 +1,5 @@
 package org.java.practice.web;
 
-import sun.plugin2.message.Serializer;
-
 import java.io.FileDescriptor;
 import java.io.SyncFailedException;
 
