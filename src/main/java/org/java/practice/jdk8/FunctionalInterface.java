@@ -72,7 +72,7 @@ public class FunctionalInterface {
      * Comparator 是老Java中的经典接口， Java 8在此之上添加了多种默认方法：
      */
     public void Comparator() {
-        Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
+        Comparator<Person> comparator = Comparator.comparing(p -> p.firstName);
         Person p1 = new Person("John", "Doe");
         Person p2 = new Person("Alice", "Wonderland");
         comparator.compare(p1, p2);
