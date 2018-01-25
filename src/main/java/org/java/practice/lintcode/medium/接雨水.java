@@ -1,4 +1,4 @@
-package org.java.practice.lintcode;
+package org.java.practice.lintcode.medium;
 
 /**
  * Created by 晋阳 on 2018/1/9.
