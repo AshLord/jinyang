@@ -1,4 +1,4 @@
-package org.java.practice.java.concurrent;
+package org.java.practice.java.util.concurrent;
 
 /**
  * Created by yang.jin on 10/10/2017.

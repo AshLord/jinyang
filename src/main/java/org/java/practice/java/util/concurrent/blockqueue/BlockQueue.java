@@ -1,4 +1,4 @@
-package org.java.practice.java.concurrent;
+package org.java.practice.java.util.concurrent.blockqueue;
 
 import java.util.ArrayList;
 import java.util.List;

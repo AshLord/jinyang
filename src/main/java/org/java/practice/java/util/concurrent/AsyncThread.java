@@ -1,4 +1,4 @@
-package org.java.practice.java.concurrent;
+package org.java.practice.java.util.concurrent;
 
 import java.util.ArrayList;
 import java.util.List;

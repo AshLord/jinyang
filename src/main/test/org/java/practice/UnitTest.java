@@ -2,6 +2,8 @@ package org.java.practice;
 
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 /**
  * Created by 晋阳 on 2018/1/7.
  */
@@ -9,6 +11,17 @@ public class UnitTest {
 
     @Test
     public void asjlffklsajdfs() {
+
+        //3814697265625
+        //5555550000000
+        //19073486328125
+        System.out.println(BigDecimal.valueOf(Math.pow(5,19)).toString());
+        System.out.println("________________________________");
+        System.out.println(3/5);
+        System.out.println(8/5);
+        System.out.println(12/5);
+        System.out.println(16/5);
+        System.out.println("________________________________");
         System.out.println("nfhiexxjrtvpfhkrxcutexxcodfioburrtjefrgwrnqtyzelvtpvwdvvpsbudwtiryqzzy".length());
         System.out.println("0000000000000000000000000".length());
     }

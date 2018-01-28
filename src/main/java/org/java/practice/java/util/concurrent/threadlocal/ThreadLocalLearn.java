@@ -1,4 +1,4 @@
-package org.java.practice.java.concurrent.threadlocal;
+package org.java.practice.java.util.concurrent.threadlocal;
 
 /**
  * Created by 晋阳 on 2017/12/17.
