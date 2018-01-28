@@ -10,6 +10,7 @@ public class UnitTest {
     @Test
     public void asjlffklsajdfs() {
         System.out.println("nfhiexxjrtvpfhkrxcutexxcodfioburrtjefrgwrnqtyzelvtpvwdvvpsbudwtiryqzzy".length());
+        System.out.println("0000000000000000000000000".length());
     }
 
     @Test
