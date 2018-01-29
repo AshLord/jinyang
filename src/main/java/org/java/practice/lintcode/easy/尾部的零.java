@@ -12,7 +12,7 @@ public class 尾部的零 {
     public static void main(String[] args) {
         尾部的零 test = new 尾部的零();
         //long val = 5555550000000L;
-        long val = 5555550000L;
+        long val = 15;
         //long val = 100000;
         //long val = 103992;
         //System.out.println(test.trailingZeros(val));
@@ -25,7 +25,7 @@ public class 尾部的零 {
 
     /**
      * 哎，最终还是取看了网上的思路，原来思路是分解质因数！
-     * 最终问题就转化成了求1-n之间有多个个数字5！！
+     * 最终问题就转化成了求n因式分解后有多个个数字5！！
      * @param n
      * @return
      */
