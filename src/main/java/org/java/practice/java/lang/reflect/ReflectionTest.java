@@ -1,4 +1,4 @@
-package org.java.practice.java.reflect;
+package org.java.practice.java.lang.reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -25,7 +25,7 @@ public class ReflectionTest {
     }
 
     public static void threefunctionToGetClass() throws Exception {
-        Class class1 = Class.forName("org.java.practice.java.reflect.MyTest");
+        Class class1 = Class.forName("org.java.practice.java.lang.reflect.MyTest");
         Class class2 = MyTest.class;
         Class class3 = new MyTest().getClass();
 
