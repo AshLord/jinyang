@@ -28,7 +28,7 @@ public class 丑数II {
      * @return
      */
     public int nthUglyNumber4(int n) {
-        int[] ugly = new int[n];
+        int[] ugly = new int[n+1];
         ugly[0] = 1;
         int p2 = 0;
         int p3 = 0;
@@ -37,22 +37,30 @@ public class 丑数II {
         while (i < n) {
             if (ugly[p2] * 2 > ugly[p3] * 3) {
                 if (ugly[p5] * 5 > ugly[p3] * 3) {
-                    ugly[i+1] = ugly[i] * 3;
-                    i++;
+                    if (ugly[p3] * 3 != ugly[i]) {
+                        ugly[i + 1] = ugly[p3] * 3;
+                        i++;
+                    }
                     p3++;
                 } else {
-                    ugly[i+1] = ugly[i] * 5;
-                    i++;
+                    if (ugly[p5] * 5 != ugly[i]) {
+                        ugly[i + 1] = ugly[p5] * 5;
+                        i++;
+                    }
                     p5++;
                 }
             } else {
                 if (ugly[p5] * 5 > ugly[p2] * 2) {
-                    ugly[i+1] = ugly[i] * 2;
-                    i++;
+                    if (ugly[p2] * 2 != ugly[i]) {
+                        ugly[i + 1] = ugly[p2] * 2;
+                        i++;
+                    }
                     p2++;
                 } else {
-                    ugly[i+1] = ugly[i] * 5;
-                    i++;
+                    if (ugly[p5] * 5 != ugly[i]) {
+                        ugly[i + 1] = ugly[p5] * 5;
+                        i++;
+                    }
                     p5++;
                 }
             }

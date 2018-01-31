@@ -8,7 +8,7 @@ public class Son extends Father{
     @Override
     void fatherFunc() {
         super.fatherFunc();
-        System.out.println(" i am son");
+        System.out.println("Son Override fatherFunc");
     }
 
     //只有class文件中才能出现
