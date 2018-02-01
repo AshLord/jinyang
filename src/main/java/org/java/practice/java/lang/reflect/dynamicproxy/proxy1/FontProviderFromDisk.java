@@ -1,4 +1,4 @@
-package org.java.practice.java.dynamicproxy.proxy1;
+package org.java.practice.java.lang.reflect.dynamicproxy.proxy1;
 
 public class FontProviderFromDisk implements FontProvider{
 

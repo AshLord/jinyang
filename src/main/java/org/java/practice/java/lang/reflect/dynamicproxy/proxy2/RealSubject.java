@@ -1,4 +1,4 @@
-package org.java.practice.java.dynamicproxy.proxy2;
+package org.java.practice.java.lang.reflect.dynamicproxy.proxy2;
 
 /**
  * @author yang.jin

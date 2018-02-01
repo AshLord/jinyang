@@ -1,4 +1,4 @@
-package org.java.practice.java.dynamicproxy.proxy2;
+package org.java.practice.java.lang.reflect.dynamicproxy.proxy2;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -9,12 +9,21 @@ import java.lang.reflect.Proxy;
  * date: 06/12/2017
  * desc:
  */
-public class ProxyHandler implements InvocationHandler{
+public class ProxyHandler implements InvocationHandler {
+
+    public static void main(String args[])
+    {
+        ProxyHandler proxy = new ProxyHandler();
+        //绑定该类实现的所有接口
+        Subject sub = (Subject) proxy.newProxyInstance(new RealSubject());
+        sub.doSomething();
+        sub.doNextThing();
+    }
 
     private Object tar;
 
     //绑定委托对象，并返回代理类
-    public Object bind(Object tar)
+    public Object newProxyInstance(Object tar)
     {
         this.tar = tar;
         //绑定该类实现的所有接口，取得代理类
@@ -23,6 +32,7 @@ public class ProxyHandler implements InvocationHandler{
                 this);
     }
 
+    @Override
     public Object invoke(Object proxy , Method method , Object[] args)throws Throwable
     {
         Object result = null;
