@@ -1,6 +1,6 @@
-package org.java.practice.lintcode.minimum_spanning_tree;
+package org.java.practice.algorithm.minimum_spanning_tree;
 
-import org.java.practice.lintcode.minimum_spanning_tree.kruskal.Kruskal;
+import org.java.practice.algorithm.minimum_spanning_tree.kruskal.Kruskal;
 
 /**
  * @author yang.jin

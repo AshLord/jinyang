@@ -28,12 +28,17 @@ public class FunctionUtil {
     }
 
     public static <T,S,K,R> BiFunction<Function<T,K>, BiFunction<S,T,R>, List<R>> join(List<T> destList, Map<K,S> srcMap) {
-        return (dkeyFunc,mergeFunc) -> destList.stream().map(
-                dest -> {
-                    K key = dkeyFunc.apply(dest);
-                    S src = srcMap.get(key);
-                    return mergeFunc.apply(src, dest);
-                }).collect(Collectors.toList());
+        return new BiFunction<Function<T, K>, BiFunction<S, T, R>, List<R>>() {
+            @Override
+            public List<R> apply(Function<T, K> dkeyFunc, BiFunction<S, T, R> mergeFunc) {
+                return destList.stream().map(
+                        dest -> {
+                            K key = dkeyFunc.apply(dest);
+                            S src = srcMap.get(key);
+                            return mergeFunc.apply(src, dest);
+                        }).collect(Collectors.toList());
+            }
+        };
     }
 
     /** 对给定的值 x,y 应用指定的二元操作函数 */

@@ -1,4 +1,4 @@
-package org.java.practice.lintcode.minimum_spanning_tree;
+package org.java.practice.algorithm.minimum_spanning_tree;
 
 /**
  * @author yang.jin

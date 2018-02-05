@@ -1,4 +1,4 @@
-package org.java.practice.lintcode.dijkstra;
+package org.java.practice.algorithm.dijkstra;
 
 import java.util.ArrayList;
 import java.util.List;
