@@ -31,6 +31,8 @@ public class ReflectionTest {
         Class class2 = MyTest.class;
         Class class3 = new MyTest().getClass();
 
+        Class class4 = ClassLoader.getPlatformClassLoader().loadClass("org.java.practice.java.lang.reflect.MyTest");
+
         MyTest object = (MyTest) class1.newInstance();
         Field[] fields = class1.getDeclaredFields();
         //定义可变长的字符串，用来存储属性
