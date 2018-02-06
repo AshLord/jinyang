@@ -10,6 +10,16 @@ import java.math.BigDecimal;
 public class UnitTest {
 
     @Test
+    public void safdlkjjfdsa() {
+        System.out.println((1-1)/2);
+        System.out.println((2-1)/2);
+        System.out.println((3-1)/2);
+        System.out.println((4-1)/2);
+
+        System.out.println(Math.log(5)/Math.log(2));
+    }
+
+    @Test
     public void asjlffklsajdfs() {
 
         //3814697265625
