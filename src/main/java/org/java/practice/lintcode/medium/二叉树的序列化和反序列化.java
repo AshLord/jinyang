@@ -26,15 +26,32 @@ public class 二叉树的序列化和反序列化 {
         root.left = new TreeNode(9);
         root.right = new TreeNode(20);
         root.right.left = new TreeNode(15);
-        //root.right.right = new TreeNode(7);
+        root.right.right = new TreeNode(7);
+
+        TreeNode root2 = new TreeNode(1);
+        root2.left = new TreeNode(2);
+        root2.left.left = new TreeNode(3);
+        root2.left.left.left = new TreeNode(4);
 
         二叉树的序列化和反序列化 test = new 二叉树的序列化和反序列化();
-        System.out.println(test.serialize(root));
-        TreeNode deserialize = test.deserialize(test.serialize(root));
-        System.out.println(test.serialize(deserialize));
-        TreeNode result = test.deserialize("{1,2,#,3,#,4}");
+        System.out.println(test.serialize0(root2));
     }
 
+    public String serialize0(TreeNode root) {
+        // write your code here
+        return null;
+    }
+
+    public TreeNode deserialize0(String data) {
+        // write your code here
+        return null;
+    }
+
+    /**
+     * 错误解法，因为lintcode给的样例不能体现出最简构造二叉树的规则，当成每层的全部元素都要遍历来求解了
+     * @param root
+     * @return
+     */
     public String serialize(TreeNode root) {
         // write your code here
         if (root == null) {
@@ -81,6 +98,11 @@ public class 二叉树的序列化和反序列化 {
         return sb.substring(0, sb.length() - 1) + "}";
     }
 
+    /**
+     * 错误解法，因为lintcode给的样例不能体现出最简构造二叉树的规则，当成每层的全部元素都要遍历来求解了
+     * @param data
+     * @return
+     */
     public TreeNode deserialize(String data) {
         // write your code here
         String[] vals = data.substring(1, data.length() - 1).split(",");
