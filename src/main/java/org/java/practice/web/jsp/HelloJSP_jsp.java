@@ -8,7 +8,6 @@ package org.java.practice.web.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.servlet.jsp.*;
 import java.util.*;
 
 public final class HelloJSP_jsp /*extends org.apache.jasper.runtime.HttpJspBase

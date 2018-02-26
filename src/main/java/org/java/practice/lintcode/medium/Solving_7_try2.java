@@ -26,12 +26,9 @@ public class Solving_7_try2 implements 二叉树的序列化和反序列化 {
             TreeNode right = list.get(notNull).right;
             if (left == null && right == null) {
                 //左右子节点都为空，说明是叶子节点
-                if (list.get(notNull + 1) == null) {
+                if (list.size() == notNull+1 || list.get(notNull + 1) == null) {
                     //叶子节点的下一节点为空，说明应该结束了
                     run = false;
-                    continue;
-                } else {
-                    notNull++;
                     continue;
                 }
             }
@@ -54,8 +51,12 @@ public class Solving_7_try2 implements 二叉树的序列化和反序列化 {
             }
         }
         //删除末尾多余的空元素
-        if (list.get(list.size() - 1) == null) {
-            list.remove(list.size() - 1);
+        for (int i=list.size();i>0;i--) {
+            if (list.get(i - 1) == null) {
+                list.remove(i - 1);
+            } else {
+                break;
+            }
         }
         //序列化
         StringBuilder sb = new StringBuilder();
