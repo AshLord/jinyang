@@ -12,40 +12,40 @@ public class Solving_7_try2 implements 二叉树的序列化和反序列化 {
         root.left.left.left = new TreeNode(4);
 
         二叉树的序列化和反序列化 test = new Solving_7_try2();
-        System.out.println(test.serialize(root));
+        /*String serialResult = test.serialize(root2);
+        System.out.println(serialResult);
+        System.out.println(test.deserialize(serialResult));*/
+
+        /////////////////////////////////////////////////////////
+        String serial = "{1,2,3,11,#,4,5,#,#,6,7,#,10,#,#,8,9,#,#,12,13,#,#,#,#,#,14}";
+        TreeNode root3 = test.deserialize(serial);
+        System.out.println(test.serialize(root3));
+
     }
 
+    @Override
     public String serialize(TreeNode root) {
         // write your code here
+        // 边界
+        if (root == null) return "{}";
+
         List<TreeNode> list = new ArrayList<>();
         list.add(root);
         int notNull = 0;
-        boolean run = true;
-        while (run) {
-            TreeNode left = list.get(notNull).left;
-            TreeNode right = list.get(notNull).right;
-            if (left == null && right == null) {
-                //左右子节点都为空，说明是叶子节点
-                if (list.size() == notNull+1 || list.get(notNull + 1) == null) {
-                    //叶子节点的下一节点为空，说明应该结束了
-                    run = false;
-                    continue;
-                }
+        while (true) {
+
+            if (list.get(notNull) == null) {
+                break;
             }
 
-            list.add(left);
-            list.add(right);
+            list.add(list.get(notNull).left);
+            list.add(list.get(notNull).right);
 
-            int cycles = 0;
-            while (true) {
+            while (notNull < list.size()-1) {
                 if (list.get(notNull + 1) == null) {
                     notNull++;
                 } else {
                     notNull++;
-                    break;
-                }
-                cycles++;
-                if (cycles == 3) {
                     break;
                 }
             }
@@ -67,8 +67,41 @@ public class Solving_7_try2 implements 二叉树的序列化和反序列化 {
         return sb.substring(0, sb.length() - 1) + "}";
     }
 
+    @Override
     public TreeNode deserialize(String data) {
         // write your code here
-        return null;
+        if (!data.contains(",")) {
+            return null;
+        }
+        String[] vals = data.substring(1, data.length() - 1).split(",");
+        TreeNode root = new TreeNode(Integer.valueOf(vals[0]));
+        List<TreeNode> list = new ArrayList<>();
+        list.add(root);
+        int parent = 0;
+        boolean left = true;
+        for (int i = 1;i<vals.length;i++) {
+            if (left) {
+                if (!vals[i].equals("#")) {
+                    list.get(parent).left = new TreeNode(Integer.valueOf(vals[i]));
+                }
+                list.add(list.get(parent).left);
+                left = false;
+            } else {
+                if (!vals[i].equals("#")) {
+                    list.get(parent).right = new TreeNode(Integer.valueOf(vals[i]));
+                }
+                list.add(list.get(parent).right);
+                left = true;
+                while (parent < list.size()) {
+                    if (vals[parent+1].equals("#")) {
+                        parent++;
+                    } else {
+                        parent++;
+                        break;
+                    }
+                }
+            }
+        }
+        return root;
     }
 }

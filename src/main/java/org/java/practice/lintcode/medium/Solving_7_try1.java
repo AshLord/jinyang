@@ -32,7 +32,10 @@ public class Solving_7_try1 implements 二叉树的序列化和反序列化{
         System.out.println(test.serialize(root));
 
         二叉树的序列化和反序列化 test2 = new Solving_7_try2();
+        String serialResult = test2.serialize(root);
         System.out.println(test2.serialize(root));
+        TreeNode result = test2.deserialize(serialResult);
+
     }
 
 
@@ -42,6 +45,7 @@ public class Solving_7_try1 implements 二叉树的序列化和反序列化{
      * @param root
      * @return
      */
+    @Override
     public String serialize(TreeNode root) {
         // write your code here
         if (root == null) {
@@ -93,6 +97,7 @@ public class Solving_7_try1 implements 二叉树的序列化和反序列化{
      * @param data
      * @return
      */
+    @Override
     public TreeNode deserialize(String data) {
         // write your code here
         String[] vals = data.substring(1, data.length() - 1).split(",");
