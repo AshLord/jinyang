@@ -3,11 +3,35 @@ package org.java.practice;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 /**
  * Created by 晋阳 on 2018/1/7.
  */
 public class UnitTest {
+
+    public static void printArr(int[] arr) {
+        for (int a : arr) {
+            System.out.println(a);
+        }
+    }
+
+    @Test
+    public void iiiii() {
+        int[] a = {1, 2, 3, 4, 5};
+        printArr(Arrays.copyOf(a,3));
+    }
+
+    @Test
+    public void salfj() {
+
+        int cap = 16;
+        System.out.println(cap>>>2);
+        int min = 0x80000000;
+        System.out.println(min);
+        int max = 0x7fffffff;
+        System.out.println(max);
+    }
 
     @Test
     public void safdlkjjfdsa() {
