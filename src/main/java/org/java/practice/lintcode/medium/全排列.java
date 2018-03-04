@@ -28,7 +28,6 @@ public class 全排列 {
     }
 
     /**
-     * todo 研究深度优先搜索
      * 深度优先搜索
      * 时间 O(N) 空间 O(N) 递归栈
      * @param nums
@@ -38,14 +37,16 @@ public class 全排列 {
         res2 = new LinkedList<List<Integer>>();
         used = new boolean[nums.length];
         List<Integer> tmp = new LinkedList<Integer>();
-        helper(nums, tmp);
+        this.nums = nums;
+        helper(tmp);
         return res2;
     }
 
     List<List<Integer>> res2;
     boolean[] used;
+    int[] nums;
 
-    private void helper(int[] nums, List<Integer> tmp){
+    private void helper(List<Integer> tmp){
         if(tmp.size() == nums.length){
             List<Integer> list = new LinkedList<Integer>(tmp);
             res2.add(list);
@@ -58,7 +59,7 @@ public class 全排列 {
                 // 加入该元素后继续搜索
                 used[idx] = true;
                 tmp.add(nums[idx]);
-                helper(nums, tmp);
+                helper(tmp);
                 tmp.remove(tmp.size()-1);
                 used[idx] = false;
             }

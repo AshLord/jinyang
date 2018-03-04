@@ -3,14 +3,22 @@ package org.java.practice;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by 晋阳 on 2018/1/7.
  */
 public class UnitTest {
 
+    @Test
+    public void ieiensda() {
+        System.out.println(0+0>>1);
+    }
+
     public static void printArr(int[] arr) {
+        List<Integer> list = new ArrayList<>();
         for (int a : arr) {
             System.out.println(a);
         }
