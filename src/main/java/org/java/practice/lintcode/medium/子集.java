@@ -12,7 +12,8 @@ public class 子集 {
 
     public static void main(String[] args) {
         子集 test = new 子集();
-        List<List<Integer>> anss = test.subsets(new int[]{1, 2, 3});
+        //List<List<Integer>> anss = test.subsets(new int[]{1, 2, 3});
+        List<List<Integer>> anss = test.subsets(new int[]{0, 3, 5, 7, 9});
         for (List<Integer> ans : anss) {
             System.out.println(ans);
         }
@@ -35,27 +36,29 @@ public class 子集 {
      */
     public List<List<Integer>> subsets(int[] nums) {
         // write your code here
+        Arrays.sort(nums);
         this.nums = nums;
         this.used = new boolean[nums.length];
         this.res = new ArrayList<>();
-        eles = 2;
-        List<Integer> tmp = new ArrayList<>();
-        helper(tmp);
+        for (eles = 0;eles<=nums.length;eles++) {
+            List<Integer> tmp = new ArrayList<>();
+            helper(tmp,0);
+        }
         return res;
     }
 
-    public void helper(List<Integer> tmp) {
+    public void helper(List<Integer> tmp,int begin) {
         if (tmp.size() == eles) {
-            res.add(tmp);
+            res.add(new ArrayList<>(tmp));
             return;
         }
-        for (int i=0;i<nums.length;i++) {
+        for (int i=begin;i<nums.length;i++) {
             if (used[i]) {
                 continue;
             }
             tmp.add(nums[i]);
             used[i] = true;
-            helper(tmp);
+            helper(tmp,begin+i);
             used[i] = false;
             tmp.remove(tmp.size()-1);
         }
