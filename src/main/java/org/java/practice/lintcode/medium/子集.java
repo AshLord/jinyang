@@ -12,8 +12,16 @@ public class 子集 {
 
     public static void main(String[] args) {
         子集 test = new 子集();
-        System.out.println(test.subsets(new int[]{1, 2, 3}));
+        List<List<Integer>> anss = test.subsets(new int[]{1, 2, 3});
+        for (List<Integer> ans : anss) {
+            System.out.println(ans);
+        }
     }
+
+    private boolean[] used;
+    private int eles;
+    private int[] nums;
+    private List<List<Integer>> res;
 
     /**
      [3],
@@ -28,9 +36,28 @@ public class 子集 {
     public List<List<Integer>> subsets(int[] nums) {
         // write your code here
         this.nums = nums;
-        //todo 因为有递增的要求，所有遍历递归的情况：以1开头的所有子集，以2开头的所有子集......
+        this.used = new boolean[nums.length];
+        this.res = new ArrayList<>();
+        eles = 2;
+        List<Integer> tmp = new ArrayList<>();
+        helper(tmp);
         return res;
     }
-    private int[] nums;
-    private List<List<Integer>> res;
+
+    public void helper(List<Integer> tmp) {
+        if (tmp.size() == eles) {
+            res.add(tmp);
+            return;
+        }
+        for (int i=0;i<nums.length;i++) {
+            if (used[i]) {
+                continue;
+            }
+            tmp.add(nums[i]);
+            used[i] = true;
+            helper(tmp);
+            used[i] = false;
+            tmp.remove(tmp.size()-1);
+        }
+    }
 }
