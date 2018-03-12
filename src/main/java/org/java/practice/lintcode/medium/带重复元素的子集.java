@@ -4,38 +4,31 @@ import java.util.*;
 
 /**
  * @author yang.jin
- * date: 04/03/2018
- * desc:给定一个含不同整数的集合，返回其所有的子集
- * 子集中的元素排列必须是非降序的，解集必须不包含重复的子集
+ * date: 12/03/2018
+ * desc:
  */
-public class 子集 {
+public class 带重复元素的子集 {
 
     public static void main(String[] args) {
-        子集 test = new 子集();
-        //List<List<Integer>> anss = test.subsets(new int[]{1, 2, 3});
-        //List<List<Integer>> anss = test.subsets(new int[]{0, 3, 5, 7, 9});
-        List<List<Integer>> anss = test.subsets(new int[]{1, 2, 3, 4, 5});
-        //List<List<Integer>> anss = test.subsets(new int[]{0});
-        for (List<Integer> ans : anss) {
-            System.out.println(ans);
-        }
+        带重复元素的子集 test = new 带重复元素的子集();
+        System.out.println(test.subsetsWithDup(new int[]{1, 2, 2}));
     }
 
     private boolean[] used;
     private int eles;
     private int[] nums;
-    private List<List<Integer>> res;
-    public List<List<Integer>> subsets(int[] nums) {
+    private Set<List<Integer>> res;
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
         // write your code here
         Arrays.sort(nums);
         this.nums = nums;
         this.used = new boolean[nums.length];
-        this.res = new ArrayList<>();
+        this.res = new HashSet<>();
         for (eles = 0;eles<=nums.length;eles++) {
             List<Integer> tmp = new ArrayList<>();
             helper(tmp,0);
         }
-        return res;
+        return new ArrayList<>(res);
     }
     public void helper(List<Integer> tmp,int begin) {
         if (tmp.size() == eles) {
