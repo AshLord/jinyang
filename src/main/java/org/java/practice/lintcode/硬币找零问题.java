@@ -12,7 +12,7 @@ public class 硬币找零问题 {
     }
 
     /**
-     * 硬币找零：动态规划算法
+     * 硬币找零：动态规划题
      * @param values 保存每一种硬币的币值的数组
      * @param valueKinds 币值不同的硬币种类数量，即coinValue[]数组的大小
      * @param money 需要找零的面值

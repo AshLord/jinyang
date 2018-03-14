@@ -5,7 +5,6 @@ import java.util.*;
 /**
  * @author yang.jin
  * date: 02/01/2018
- * desc:    手把手学习动态规划
  */
 public class 挖金矿 {
 

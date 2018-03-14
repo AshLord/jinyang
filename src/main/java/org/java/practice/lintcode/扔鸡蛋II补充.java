@@ -1,5 +1,7 @@
 package org.java.practice.lintcode;
 
+import static org.java.practice.lintcode.Util.printDp;
+
 /**
  * @author yang.jin
  * date: 03/01/2018
@@ -87,6 +89,7 @@ public class 扔鸡蛋II补充 {
 
             }
         }
+        printDp(tc);
         return tc[eggs][floors];
     }
 
