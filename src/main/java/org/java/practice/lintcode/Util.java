@@ -15,4 +15,13 @@ public final class Util<T> {
             System.out.println();
         }
     }
+
+    public static void printDp(boolean[][] dp) {
+        for (boolean[] e : dp) {
+            for (boolean t : e) {
+                System.out.print(t+" ");
+            }
+            System.out.println();
+        }
+    }
 }
