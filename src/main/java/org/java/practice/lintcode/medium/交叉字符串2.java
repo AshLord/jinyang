@@ -5,7 +5,7 @@ import static org.java.practice.lintcode.Util.printDp;
 /**
  * @author yang.jin
  * date: 15/03/2018
- * desc:
+ * desc: 动态规划题
  */
 public class 交叉字符串2 {
     public static void main(String[] args) {
