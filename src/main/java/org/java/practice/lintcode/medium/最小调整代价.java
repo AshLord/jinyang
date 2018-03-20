@@ -32,10 +32,23 @@ public class 最小调整代价 {
         // 第一步 状态转移矩阵 dp[i][j] = A中第i个数改为数字j的代价
         int[][] dp = new int[A.size()][101];
         // 第二步 初始化状态矩阵
-        for (int i=1;i<=101;i++) {
+        for (int i=0;i<101;i++) {
             dp[0][i] = Math.abs(A.get(0) - i);
         }
         // 第三步 状态转移方程 dp[i][j] = min( dp[i][j], 第i个元素和j的差绝对值 + min（dp[i-1][j-target],......,dp[i-1][j+target]） )
-
+        for (int i=1;i<A.size();i++) {
+            for (int j=0;j<=100;j++) {
+                int min = Integer.MAX_VALUE;
+                for (int k=((j-target)>-1?j-target:0);k<=((j+target)<101?j+target:100);k++) {
+                    min = Math.min(min, dp[i - 1][k]);
+                }
+                dp[i][j] = min + Math.abs(A.get(i) - j);
+            }
+        }
+        int res = Integer.MAX_VALUE;
+        for (int i=0;i<101;i++) {
+            res = Math.min(res, dp[A.size() - 1][i]);
+        }
+        return res;
     }
 }

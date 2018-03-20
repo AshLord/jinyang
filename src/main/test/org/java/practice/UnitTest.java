@@ -16,7 +16,8 @@ public class UnitTest {
     public void ieiensda() {
         /*String a ="[[],[0],[0,3],[0,3,5],[0,3,5,7],[0,3,5,7,9],[0,3,5,9],[0,3,7],[0,3,7,9],[0,3,9],[0,5],[0,5,7],[0,5,7,9],[0,5,9],[0,7],[0,7,9],[0,9],[3],[3,5],[3,5,7],[3,5,7,9],[3,5,9],[3,7],[3,7,9],[3,9],[5],[5,7],[5,7,9],[5,9],[7],[7,9],[9]]";
         System.out.println(a.replaceAll("\\],\\[","]\n["));*/
-        System.out.println(11/2);
+        //System.out.println(11/2);
+        System.out.println("610121740526727".length());
     }
 
     public static void printArr(int[] arr) {
