@@ -44,8 +44,12 @@ public class 背包问题 {
         return dp[A.length - 1][m];
     }
 
-    //其他解法：状态转移方程时间复杂度超了。
-
+    /**
+     * 我的牛逼解法
+     * @param m
+     * @param A
+     * @return
+     */
     public int backPack2(int m, int[] A) {
         // write your code here
 
