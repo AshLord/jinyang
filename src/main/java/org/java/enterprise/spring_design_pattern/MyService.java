@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 用Spring实现
+ * 用Spring实现？？？
  *
  * @author jinyang
  * @date 2019/3/13 0013.
@@ -29,17 +29,18 @@ public class MyService {
             Order order2 = o2.getClass().getAnnotation(Order.class);
             return order1.value() - order2.value();
         });
-        boolean end = false;
+        boolean ok = true;
         for (Check check : checks) {
             if (!check.ok()) {
-                end = true;
+                ok = false;
             }
         }
-        if (end) {
+        if (!ok) {
             System.out.println("流程终止");
             return;
         }
 
         System.out.println("流程继续");
     }
+
 }
